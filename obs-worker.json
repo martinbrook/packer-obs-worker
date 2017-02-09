@@ -1,0 +1,30 @@
+{
+ "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "eu-west-1",
+    "source_ami": "ami-ff63dd8c",
+    "instance_type": "t2.micro",
+    "ssh_username": "root",
+    "ami_name": "obs-worker {{timestamp}}"
+  }],
+ "provisioners": [
+    {
+      "type": "file",
+      "source": "setup-worker.sh",
+      "destination": "/root/setup-worker.sh"
+    },
+    {
+      "type": "shell",
+      "scripts": [
+          "install-obs-packages.sh"
+      ]
+    }
+  ]
+}
+
