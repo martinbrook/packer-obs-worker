@@ -20,9 +20,9 @@ eg variables.json
 
 `/etc/sysconfig/obs-server
 
-`OBS_SRC_SERVER="<obs-server>:5352"
+`OBS_SRC_SERVER="obs-server-ip:5352"
 
-`OBS_REPO_SERVERS="<obs-server>:5252"
+`OBS_REPO_SERVERS="obs-server-ip:5252"
 
 `systemctl enable obsworker
 
