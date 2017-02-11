@@ -19,10 +19,13 @@ eg variables.json
 ##Launch Instance
 
 `/etc/sysconfig/obs-server
+
 `OBS_SRC_SERVER="ec2-54-171-154-103.eu-west-1.compute.amazonaws.com:5352"
+
 `OBS_REPO_SERVERS="ec2-54-171-154-103.eu-west-1.compute.amazonaws.com:5252"
 
 `systemctl enable obsworker
+
 `systemctl start obsworker
 
 ##Tested
